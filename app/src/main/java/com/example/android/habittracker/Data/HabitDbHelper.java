@@ -25,9 +25,9 @@ public class HabitDbHelper extends SQLiteOpenHelper {
                 + HabitEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + HabitEntry.COLUMN_WAKE_TIME + " INTEGER "
                 + HabitEntry.COLUMN_SLEEP_TIME + " INTEGER "
-                + HabitEntry.COLUMN_ATE_BREAKFAST + " INTEGER "
-                + HabitEntry.COLUMN_ATE_LUNCH + " INTEGER "
-                + HabitEntry.COLUMN_ATE_DINNER + " INTEGER);";
+                + HabitEntry.COLUMN_ATE_BREAKFAST + " TEXT "
+                + HabitEntry.COLUMN_ATE_LUNCH + " TEXT "
+                + HabitEntry.COLUMN_ATE_DINNER + " TEXT);";
         sqLiteDatabase.execSQL(SQL_CREATE_HABIT_TABLE);
     }
 
