@@ -7,7 +7,8 @@ import android.provider.BaseColumns;
  */
 
 public class HabitContract {
-    private HabitContract(){}
+    private HabitContract() {
+    }
 
     public class HabitEntry implements BaseColumns {
         public static final String TABLE_NAME = "habits";

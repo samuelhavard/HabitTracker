@@ -14,7 +14,7 @@ import com.example.android.habittracker.R;
 /**
  * The Habit Tracker app was created as part of the Udacity curriculum.  It creates a {@link SQLiteDatabase}
  * if one does not exist and inserts information into it.  If one does exist, in inserts information into it.
- *
+ * <p>
  * There was no requirement for a UI to display any information for this project, however a simple UI
  * is incorporated for ease of seeing the information present in the database.
  */
@@ -81,12 +81,12 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             display.append(
-                    HabitEntry._ID  + " - " +
-                    HabitEntry.COLUMN_WAKE_TIME + " - " +
-                    HabitEntry.COLUMN_SLEEP_TIME + " - " +
-                    HabitEntry.COLUMN_ATE_BREAKFAST + " - " +
-                    HabitEntry.COLUMN_ATE_LUNCH + " - " +
-                    HabitEntry.COLUMN_ATE_DINNER + "\n"
+                    HabitEntry._ID + " - " +
+                            HabitEntry.COLUMN_WAKE_TIME + " - " +
+                            HabitEntry.COLUMN_SLEEP_TIME + " - " +
+                            HabitEntry.COLUMN_ATE_BREAKFAST + " - " +
+                            HabitEntry.COLUMN_ATE_LUNCH + " - " +
+                            HabitEntry.COLUMN_ATE_DINNER + "\n"
             );
 
             int idColumnIndex = cursor.getColumnIndex(HabitEntry._ID);
@@ -105,12 +105,12 @@ public class MainActivity extends AppCompatActivity {
                 String dinner = cursor.getString(dinnerColumnIndex);
 
                 display.append("\n" +
-                id + " - " +
-                wakeTime + " - " +
-                sleepTime + " - " +
-                breakfast + " - " +
-                lunch + " - " +
-                dinner);
+                        id + " - " +
+                        wakeTime + " - " +
+                        sleepTime + " - " +
+                        breakfast + " - " +
+                        lunch + " - " +
+                        dinner);
             }
         } finally {
             cursor.close();
