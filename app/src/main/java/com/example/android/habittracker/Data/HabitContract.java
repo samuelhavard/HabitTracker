@@ -3,7 +3,7 @@ package com.example.android.habittracker.Data;
 import android.provider.BaseColumns;
 
 /**
- * Created by samue_000 on 9/28/2016.
+ * HabitContract class is the contract for the sqlite database used in the habit tracker app
  */
 
 public class HabitContract {

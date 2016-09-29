@@ -11,6 +11,13 @@ import com.example.android.habittracker.Data.HabitContract.HabitEntry;
 import com.example.android.habittracker.Data.HabitDbHelper;
 import com.example.android.habittracker.R;
 
+/**
+ * The Habit Tracker app was created as part of the Udacity curriculum.  It creates a {@link SQLiteDatabase}
+ * if one does not exist and inserts information into it.  If one does exist, in inserts information into it.
+ *
+ * There was no requirement for a UI to display any information for this project, however a simple UI
+ * is incorporated for ease of seeing the information present in the database.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private HabitDbHelper mHabitDbHelper;
@@ -25,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
         updateDisplay();
     }
 
+    /**
+     * insertHabit is a helper method that inserts dummy data into the database
+     */
     private void insertHabit() {
         SQLiteDatabase db = mHabitDbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -37,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
         db.insert(HabitEntry.TABLE_NAME, null, values);
     }
 
+    /**
+     * updateDisplay uses the information in the database to update a {@link TextView} to display
+     * the contents of the database to the screen.  This is done via a {@link Cursor} object.
+     */
     private void updateDisplay() {
 
         SQLiteDatabase db = mHabitDbHelper.getReadableDatabase();

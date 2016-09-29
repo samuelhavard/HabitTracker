@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.example.android.habittracker.Data.HabitContract.HabitEntry;
 
 /**
- * Created by samue_000 on 9/28/2016.
+ * HabitDbHelper class extends {@link SQLiteOpenHelper} and creates a database if one does not exist.
  */
 
 public class HabitDbHelper extends SQLiteOpenHelper {
