@@ -48,10 +48,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * updateDisplay uses the information in the database to update a {@link TextView} to display
-     * the contents of the database to the screen.  This is done via a {@link Cursor} object.
+     * readDB is a helper method used to read data from a database and return a {@link Cursor}
+     * object to be parsed for displa later.
+     *
+     * @return a {@link Cursor} object from a {@link SQLiteDatabase} to be parsed and displayed.
      */
-    private void updateDisplay() {
+    private Cursor readDB () {
 
         SQLiteDatabase db = mHabitDbHelper.getReadableDatabase();
 
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 HabitEntry.COLUMN_ATE_DINNER
         };
 
-        Cursor cursor = db.query(
+        return db.query(
                 true,
                 HabitEntry.TABLE_NAME,
                 projection,
@@ -75,6 +77,15 @@ public class MainActivity extends AppCompatActivity {
                 null,
                 null
         );
+    }
+
+    /**
+     * updateDisplay uses the information in the database to update a {@link TextView} to display
+     * the contents of the database to the screen.  This is done via a {@link Cursor} object.
+     */
+    private void updateDisplay() {
+
+        Cursor cursor = readDB();
 
         TextView display = (TextView) findViewById(R.id.display_textview);
         display.setText("Number of rows in the database: " + cursor.getCount() + "\n\n");
