@@ -48,12 +48,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * readDB is a helper method used to read data from a database and return a {@link Cursor}
+     * read is a helper method used to read data from a database and return a {@link Cursor}
      * object to be parsed for displa later.
      *
      * @return a {@link Cursor} object from a {@link SQLiteDatabase} to be parsed and displayed.
      */
-    private Cursor readDB () {
+    private Cursor read() {
 
         SQLiteDatabase db = mHabitDbHelper.getReadableDatabase();
 
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void updateDisplay() {
 
-        Cursor cursor = readDB();
+        Cursor cursor = read();
 
         TextView display = (TextView) findViewById(R.id.display_textview);
         display.setText("Number of rows in the database: " + cursor.getCount() + "\n\n");
